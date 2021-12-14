@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
-import { AkService } from './ak.service';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { AkService } from '../ak.service';
+
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
-export class AppComponent {
+export class ContactComponent implements OnInit {
   title = 'contact';
   fname:string;
   lname:any;
   email:string;
   phone:any;
   short:any;
-
 
   id={
     _id: '',
@@ -40,8 +40,6 @@ export class AppComponent {
       this.crud=data;
     })
   }
-
-
   addNewelement(){
     this.checkAdd=true;
   }
@@ -90,4 +88,7 @@ export class AppComponent {
       location.reload();
     })
   }
+  ngOnInit(): void {
+  }
+
 }
